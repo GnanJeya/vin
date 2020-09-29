@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PDFKit
+import Quartz
 
 class VinPDFView: PDFView {
         

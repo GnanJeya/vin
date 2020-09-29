@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import SwiftUI
-import PDFKit
+//import SwiftUI
+import Quartz
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
