@@ -3,11 +3,12 @@
 //  vin
 //
 //  Created by Ganan Jeyakumar on 29/09/20.
-//  Copyright © 2020 Jeya Jeyakumar Inc. All rights reserved.
+//  Copyright © 2020 Ganan Jeyakumar. All rights reserved.
 //
 
 import Cocoa
 import SwiftUI
+import PDFKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,17 +18,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+    
+        let pdfView = VinPDFView()
+        let pdfURL = Bundle.main.url(forResource: "vin", withExtension: "pdf")
+        let pdfDocument = PDFDocument(url: pdfURL!)
+        pdfView.document = pdfDocument
+        pdfView.scaleFactor = 1.70
+//        pdfView.minScaleFactor = pdfView.scaleFactor
+//        pdfView.maxScaleFactor = pdfView.scaleFactor
 
         // Create the window and set the content view. 
         window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            styleMask: [.titled, .resizable/*, .fullSizeContentView*/],
             backing: .buffered, defer: false)
         window.center()
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
+        window.setFrameAutosaveName("vin")
+        window.contentView = pdfView
         window.makeKeyAndOrderFront(nil)
+        window.toggleFullScreen(self)
+    
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -37,3 +47,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+
+//struct AppDelegate_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Text("vin")
+//    }
+//}

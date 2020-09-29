@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		31B208E325232BA7005DEE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B208E225232BA7005DEE98 /* AppDelegate.swift */; };
-		31B208E525232BA7005DEE98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B208E425232BA7005DEE98 /* ContentView.swift */; };
 		31B208E725232BAA005DEE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B208E625232BAA005DEE98 /* Assets.xcassets */; };
 		31B208EA25232BAA005DEE98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B208E925232BAA005DEE98 /* Preview Assets.xcassets */; };
 		31B208ED25232BAA005DEE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B208EB25232BAA005DEE98 /* Main.storyboard */; };
+		31B208F6252330F2005DEE98 /* vin.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 31B208F5252330F2005DEE98 /* vin.pdf */; };
+		31B208F825233473005DEE98 /* VinPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B208F725233473005DEE98 /* VinPDFView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31B208DF25232BA7005DEE98 /* vin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31B208E225232BA7005DEE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31B208E425232BA7005DEE98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		31B208E625232BAA005DEE98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31B208E925232BAA005DEE98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31B208EC25232BAA005DEE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31B208EE25232BAA005DEE98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31B208EF25232BAA005DEE98 /* vin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vin.entitlements; sourceTree = "<group>"; };
+		31B208F5252330F2005DEE98 /* vin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = vin.pdf; sourceTree = "<group>"; };
+		31B208F725233473005DEE98 /* VinPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinPDFView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,14 @@
 		31B208E125232BA7005DEE98 /* vin */ = {
 			isa = PBXGroup;
 			children = (
+				31B208F5252330F2005DEE98 /* vin.pdf */,
 				31B208E225232BA7005DEE98 /* AppDelegate.swift */,
-				31B208E425232BA7005DEE98 /* ContentView.swift */,
 				31B208E625232BAA005DEE98 /* Assets.xcassets */,
 				31B208EB25232BAA005DEE98 /* Main.storyboard */,
 				31B208EE25232BAA005DEE98 /* Info.plist */,
 				31B208EF25232BAA005DEE98 /* vin.entitlements */,
 				31B208E825232BAA005DEE98 /* Preview Content */,
+				31B208F725233473005DEE98 /* VinPDFView.swift */,
 			);
 			path = vin;
 			sourceTree = "<group>";
@@ -101,8 +104,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
-				ORGANIZATIONNAME = "Jeya Jeyakumar Inc.";
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Ganan Jeyakumar";
 				TargetAttributes = {
 					31B208DE25232BA7005DEE98 = {
 						CreatedOnToolsVersion = 11.7;
@@ -132,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B208F6252330F2005DEE98 /* vin.pdf in Resources */,
 				31B208ED25232BAA005DEE98 /* Main.storyboard in Resources */,
 				31B208EA25232BAA005DEE98 /* Preview Assets.xcassets in Resources */,
 				31B208E725232BAA005DEE98 /* Assets.xcassets in Resources */,
@@ -145,8 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31B208E525232BA7005DEE98 /* ContentView.swift in Sources */,
 				31B208E325232BA7005DEE98 /* AppDelegate.swift in Sources */,
+				31B208F825233473005DEE98 /* VinPDFView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +194,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -250,6 +255,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -282,11 +288,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = vin/vin.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"vin/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = vin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -294,6 +302,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gananjeya.vin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -303,11 +312,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = vin/vin.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"vin/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = vin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -315,6 +326,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gananjeya.vin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
