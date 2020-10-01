@@ -20,7 +20,7 @@ class AppMenu: NSMenu {
         mainMenu.submenu?.items = [
             NSMenuItem(title: "About \(applicationName)", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
         ]
-        items = [mainMenu]
+        self.addItem(mainMenu)
     }
     
     required init(coder: NSCoder) {
