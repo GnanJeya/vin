@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		318637D32525B86F00C266A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318637D22525B86F00C266A3 /* main.swift */; };
+		318637D62525BA2900C266A3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318637D52525BA2900C266A3 /* AppMenu.swift */; };
 		31B208E325232BA7005DEE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B208E225232BA7005DEE98 /* AppDelegate.swift */; };
 		31B208E725232BAA005DEE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B208E625232BAA005DEE98 /* Assets.xcassets */; };
 		31B208EA25232BAA005DEE98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B208E925232BAA005DEE98 /* Preview Assets.xcassets */; };
-		31B208ED25232BAA005DEE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B208EB25232BAA005DEE98 /* Main.storyboard */; };
 		31B208F6252330F2005DEE98 /* vin.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 31B208F5252330F2005DEE98 /* vin.pdf */; };
 		31B208F825233473005DEE98 /* VinPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B208F725233473005DEE98 /* VinPDFView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		318637D22525B86F00C266A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		318637D52525BA2900C266A3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		31B208DF25232BA7005DEE98 /* vin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31B208E225232BA7005DEE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31B208E625232BAA005DEE98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31B208E925232BAA005DEE98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		31B208EC25232BAA005DEE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31B208EE25232BAA005DEE98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31B208EF25232BAA005DEE98 /* vin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vin.entitlements; sourceTree = "<group>"; };
 		31B208F5252330F2005DEE98 /* vin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = vin.pdf; sourceTree = "<group>"; };
@@ -60,11 +62,12 @@
 				31B208F5252330F2005DEE98 /* vin.pdf */,
 				31B208E225232BA7005DEE98 /* AppDelegate.swift */,
 				31B208E625232BAA005DEE98 /* Assets.xcassets */,
-				31B208EB25232BAA005DEE98 /* Main.storyboard */,
 				31B208EE25232BAA005DEE98 /* Info.plist */,
 				31B208EF25232BAA005DEE98 /* vin.entitlements */,
 				31B208E825232BAA005DEE98 /* Preview Content */,
 				31B208F725233473005DEE98 /* VinPDFView.swift */,
+				318637D22525B86F00C266A3 /* main.swift */,
+				318637D52525BA2900C266A3 /* AppMenu.swift */,
 			);
 			path = vin;
 			sourceTree = "<group>";
@@ -136,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31B208F6252330F2005DEE98 /* vin.pdf in Resources */,
-				31B208ED25232BAA005DEE98 /* Main.storyboard in Resources */,
 				31B208EA25232BAA005DEE98 /* Preview Assets.xcassets in Resources */,
 				31B208E725232BAA005DEE98 /* Assets.xcassets in Resources */,
 			);
@@ -151,21 +153,12 @@
 			files = (
 				31B208E325232BA7005DEE98 /* AppDelegate.swift in Sources */,
 				31B208F825233473005DEE98 /* VinPDFView.swift in Sources */,
+				318637D62525BA2900C266A3 /* AppMenu.swift in Sources */,
+				318637D32525B86F00C266A3 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		31B208EB25232BAA005DEE98 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				31B208EC25232BAA005DEE98 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		31B208F025232BAA005DEE98 /* Debug */ = {
@@ -219,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -299,7 +292,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gananjeya.vin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -323,7 +316,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gananjeya.vin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

@@ -10,7 +10,7 @@ import Cocoa
 //import SwiftUI
 import Quartz
 
-@NSApplicationMain
+//@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
