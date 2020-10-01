@@ -17,10 +17,11 @@ class AppMenu: NSMenu {
         
         let mainMenu = NSMenuItem()
         mainMenu.submenu = NSMenu(title: "MainMenu")
-        mainMenu.submenu?.items = [
-            NSMenuItem(title: "About \(applicationName)", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
-        ]
+        mainMenu.submenu?.addItem(NSMenuItem(title: "About \(applicationName)", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: ""))
+        mainMenu.submenu?.addItem(NSMenuItem.separator())
+        mainMenu.submenu?.addItem(NSMenuItem(title: "Quit \(applicationName)", action: #selector(AppDelegate.actuallyTerminate(sender:)), keyEquivalent: ""))
         self.addItem(mainMenu)
+        
     }
     
     required init(coder: NSCoder) {
