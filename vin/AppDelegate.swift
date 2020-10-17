@@ -13,13 +13,14 @@ import Quartz
 //@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var pdfView: PDFView!
     var window: NSWindow!
     var canQuit: Bool = false
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
     
-        let pdfView = VinPDFView()
+        pdfView = VinPDFView()
         let pdfURL = Bundle.main.url(forResource: "vin", withExtension: "pdf")
         let pdfDocument = PDFDocument(url: pdfURL!)
         pdfView.document = pdfDocument
@@ -39,6 +40,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.makeKeyAndOrderFront(nil)
         window.toggleFullScreen(self)
         
+        rescaleView(sender: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.rescaleView(sender:)), name: NSWindow.didResizeNotification, object: nil)
+        
         let workspace = NSWorkspace.shared
         workspace.notificationCenter.addObserver(self, selector: #selector(AppDelegate.workspaceWillPowerOff(notification:)), name: NSWorkspace.willPowerOffNotification, object: workspace)
             
@@ -56,6 +61,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    @objc func rescaleView(sender: Any) {
+        
+        let goldenRatio: CGFloat = 1.2
+        
+        var scaleFactorForSizeToFit: CGFloat = 0.0
+        if #available(OSX 10.13, *) {
+            scaleFactorForSizeToFit = pdfView.scaleFactorForSizeToFit
+        } else {
+            pdfView.autoScales = true
+            scaleFactorForSizeToFit = pdfView.scaleFactor
+            pdfView.autoScales = false
+        }
+        
+        let size = pdfView.bounds.size
+        let windowRatio = size.width / size.height
+        if (windowRatio > goldenRatio) {
+            pdfView.scaleFactor = goldenRatio / windowRatio * scaleFactorForSizeToFit
+        } else {
+            pdfView.scaleFactor = scaleFactorForSizeToFit
+        }
+        
+//        pdfView.go(to: PDFDestination(page: pdfView.currentPage!, at: NSPoint(x: 36, y: 72)))
+        let top = NSMakePoint(0.0, (pdfView.documentView?.bounds.height)!)
+        pdfView.documentView?.scroll(top)
+    }
+    
     @objc func actuallyTerminate(sender: Any) {
         canQuit = true
         NSApplication.shared.terminate(self)
