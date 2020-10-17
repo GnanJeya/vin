@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the window and set the content view. 
         window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+            contentRect: NSRect(x: 0, y: 0, width: 1, height: 1),
             styleMask: [.titled, .resizable/*, .fullSizeContentView*/],
             backing: .buffered, defer: false)
         window.collectionBehavior = [.fullScreenPrimary]
@@ -38,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("vin")
         window.contentView = pdfView
         window.makeKeyAndOrderFront(nil)
+        window.minSize = NSSize(width: 360, height: 300)
         window.toggleFullScreen(self)
         
         rescaleView(sender: self)
