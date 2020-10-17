@@ -65,24 +65,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func rescaleView(sender: Any) {
         
         let goldenRatio: CGFloat = 1.2
-        
-        var scaleFactorForSizeToFit: CGFloat = 0.0
-        if #available(OSX 10.13, *) {
-            scaleFactorForSizeToFit = pdfView.scaleFactorForSizeToFit
-        } else {
-            pdfView.autoScales = true
-            scaleFactorForSizeToFit = pdfView.scaleFactor
-            pdfView.autoScales = false
-        }
-        
         let size = pdfView.bounds.size
         let windowRatio = size.width / size.height
-        if (windowRatio > goldenRatio) {
-            pdfView.scaleFactor = goldenRatio / windowRatio * scaleFactorForSizeToFit
+
+        if (windowRatio <= goldenRatio) {
+            pdfView.autoScales = true
         } else {
-            pdfView.scaleFactor = scaleFactorForSizeToFit
+            
+            var scaleFactorForSizeToFit: CGFloat = 0.0
+            if #available(OSX 10.13, *) {
+                scaleFactorForSizeToFit = pdfView.scaleFactorForSizeToFit
+            } else {
+                pdfView.autoScales = true
+                scaleFactorForSizeToFit = pdfView.scaleFactor
+            }
+            
+            pdfView.autoScales = false
+            pdfView.scaleFactor = goldenRatio / windowRatio * scaleFactorForSizeToFit
+            
         }
-        
+       
 //        pdfView.go(to: PDFDestination(page: pdfView.currentPage!, at: NSPoint(x: 36, y: 72)))
         let top = NSMakePoint(0.0, (pdfView.documentView?.bounds.height)!)
         pdfView.documentView?.scroll(top)
